@@ -16,7 +16,7 @@ public class RobotMonitor {
     // attributes   
     private int row;
     private int col;
-    private Move lastMove; // This value can be null if there is no move yet
+    private Move lastMove; // This value can be null, but if it is null at the beginning. The GUI won't load and an error from the GetMove class will appear
 
     // invariant
     public boolean inv() {
@@ -45,7 +45,6 @@ public class RobotMonitor {
     }
 
     public Move GetMove() {
-        // DO NOT MODIFY if you are sticking to the simple Robot model
         if (lastMove == null) {
             throw new IllegalStateException("No move has been made yet.");
         }
@@ -131,7 +130,7 @@ public class RobotMonitor {
 
     // toString method added
     public String toString() {
-        // modify if you are using the text based tester
+        // modify if you are using the text based tester - I am not using the text based string method so I didn't use this
         return " ";
     }
 }
