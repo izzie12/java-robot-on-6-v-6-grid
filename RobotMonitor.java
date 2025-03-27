@@ -6,6 +6,7 @@ public class RobotMonitor {
     public static final int MAX_ROW = 6;
     public static final int MIN_COL = 1;
     public static final int MAX_COL = 6;
+    public static final int MAX = 6;
 
     // Enumeration for moves
     public enum Move {
@@ -24,11 +25,11 @@ public class RobotMonitor {
                 && col >= MIN_COL && col <= MAX_COL;
     }
 
-    // initialisation: robot starts at (1,1), no move
+    // initialisation: robot starts at (1,1), A move has to be set to prevent throwing an error based on the GetMove method requiring a pevious move
     public RobotMonitor() {
         this.row = MIN_ROW;
         this.col = MIN_COL;
-        this.lastMove = null;
+        this.lastMove = Move.UP;
         assert inv();
     }
 
